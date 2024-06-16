@@ -1,0 +1,32 @@
+﻿<Window x:Name="WIN_Main" x:Class="AnagrammeWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnagrammeWPF"
+        mc:Ignorable="d"
+        Title="Anagramme" Height="450" Width="574" Loaded="WIN_Main_Loaded">
+    <Grid>
+        <Label x:Name="LABEL_WordToGuess" Content="Mot à deviner:" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="LABEL_Anagram" Content="Label" HorizontalAlignment="Left" Height="40" Margin="11,40,0,0" VerticalAlignment="Top" Width="552" FontWeight="Bold" FontSize="20"/>
+        <Border x:Name="BORDER_Proposition" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="50" Margin="10,85,0,0" VerticalAlignment="Top" Width="277">
+            <Button x:Name="BTN_Submit" Content="Tester" HorizontalAlignment="Left" Height="27" Margin="178,12,0,0" VerticalAlignment="Top" Width="85" Background="#FF0094FB" Foreground="White" Click="BTN_Submit_Click">
+            </Button>
+        </Border>
+        <Label x:Name="LABEL_Proposition" Content="Proposition" HorizontalAlignment="Left" Height="15" Margin="20,77,0,0" VerticalAlignment="Top" Width="72" Background="White" Padding="5,0,5,0"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="234" Margin="308,85,10,0" VerticalAlignment="Top">
+            <ListBox x:Name="LIST_History" Height="214" VerticalAlignment="Center" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_SelectionChanged" Margin="9,0,9,0"/>
+        </Border>
+        <Label x:Name="LABEL_History" Content="Historique des parties" Height="15" Margin="329,77,0,0" VerticalAlignment="Top" Background="White" Padding="5,0,5,0" HorizontalAlignment="Left" Width="127"/>
+        <Border x:Name="BORDER_Attempts" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Margin="10,143,0,10" Width="277">
+            <ListBox x:Name="LIST_Attempts" HorizontalAlignment="Right" Margin="0,62,9,9" Width="257" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        </Border>
+        <Label x:Name="LABEL_Attempts" Content="Essais" HorizontalAlignment="Left" Height="15" Margin="22,135,0,0" VerticalAlignment="Top" Width="43" Background="White" Padding="5,0,5,0"/>
+        <Label x:Name="LABEL_AttemptsProposed" Content="Propositions faîtes:" HorizontalAlignment="Left" Height="18" Margin="20,184,0,0" VerticalAlignment="Top" Width="241" Padding="0,0,0,0"/>
+        <Label x:Name="LABEL_AttemptsLeft" Content="Nombre d'essais restant : " HorizontalAlignment="Left" Height="18" Margin="20,161,0,0" VerticalAlignment="Top" Width="241" Padding="0,0,0,0"/>
+        <Button x:Name="BTN_StartOver" Content="Rejouer" Margin="0,0,182,10" Click="BTN_StartOver_Click" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="84"/>
+        <Button x:Name="BTN_Quit" Content="Quitter" Margin="0,0,12,10" Click="BTN_Quit_Click" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="84"/>
+        <TextBox x:Name="TXT_Proposition" HorizontalAlignment="Left" Margin="28,101,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="147" TextChanged="TXT_Proposition_TextChanged" MaxLines="1" CharacterCasing="Upper" AutoWordSelection="True"/>
+
+    </Grid>
+</Window>
